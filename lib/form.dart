@@ -232,7 +232,7 @@ class _MyFormPageState extends State<MyFormPage> {
                                       children: <Widget>[
                                         Center(child: const Text('Informasi Data')),
                                         SizedBox(height: 20),
-                                        // TODO: Munculkan informasi yang didapat dari form
+                                        // Munculkan informasi yang didapat dari form
                                         Text('Nama: $_namaLengkap'),
                                         if (jenjangSarjana)
                                           const Text('Jenjang: Sarjana')
