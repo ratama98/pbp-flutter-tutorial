@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pbp_flutter_tutorial/form.dart';
+import 'package:pbp_flutter_tutorial/page/form.dart';
+import 'package:pbp_flutter_tutorial/page/to_do_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,10 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-          title: Text(widget.title),
+        appBar: AppBar(
+          title: const Text('Counter'),
         ),
-        // Menambahkan drawer menu
         drawer: Drawer(
           child: Column(
             children: [
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // Route menu ke halaman utama
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const MyHomePage()),
+                    MaterialPageRoute(builder: (context) => const MyApp()),
                   );
                 },
               ),
@@ -77,6 +77,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('ToDo'),
+                onTap: () {
+                  // Route menu ke halaman to do
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ToDoPage()),
                   );
                 },
               ),
@@ -117,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
